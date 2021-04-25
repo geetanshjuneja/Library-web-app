@@ -1,0 +1,17 @@
+{% extends 'music/home.html' %}
+
+{% block content %}
+<center>
+    {% if searched %}
+    <h1> You Searched For {{searched}}</h1>
+    <br>
+    {% for b in ls %} 
+      <h2><a href="http://127.0.0.1:8000/booklist/book/{{b.id}}">{{b.title}}</a></h2>
+    {% endfor %}  
+    
+{% else %}
+<h1>Hey! You Forgot To Search For A Book</h1>
+{% endif %}
+
+</center>
+{% endblock %}

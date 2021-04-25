@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>booklist</title>
+    <style>
+        body{background-image:url("{% static 'lib.jpg' %}") ;
+        background-size: cover;}
+    </style>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+    <div id="content" name="content">
+        {% block content %}
+        <h1>Book List</h1>
+        <ul>
+            {% for b in ls %}
+            <li><h2><a href="/booklist/book/{{b.id}}" style="color: red;">{{b.title}}</a></h2></li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </div>
+    {% else %}
+    <h2>You are not logged in</h2>
+<p>Login<a href="/login" style="color: red;"> Here</a></p>
+{% endif %}
+
+</body>
+</html>

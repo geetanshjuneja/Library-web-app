@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project</title>
+<script>
+
+</script>
+
+<style>
+body {
+    background-color: rgb(111, 207, 0);
+  }
+</style>
+
+<!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<form action="#" method="POST">
+
+    {% csrf_token %}
+
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>

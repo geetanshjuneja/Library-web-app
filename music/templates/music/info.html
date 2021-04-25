@@ -1,0 +1,14 @@
+{% extends 'music/list.html' %}
+
+{% if user.is_authenticated %}
+{% block content %}
+<h1 style="text-align: center;">{{ls.title}}</h1>
+<h2>Publisher - {{ls.publisher}}</h2>
+<h2>Genre - {{ls.genre}}</h2>
+<h2>Summary - {{ls.summary}}</h2>
+<h2>ISBN Number - {{ls.isbn}}</h2>
+{% endblock %}
+{% else %}
+<h2>You are not logged in</h2>
+<p>Login<a href="/login" style="color: red;"> Here</a></p>
+{% endif %}
